@@ -42,7 +42,7 @@ async function fetchGallery(searchValue) {
   console.log(response);
 
   try {
-    if (response.data.totalHits === 0) {
+    if (response.data.totalHits === 0 || searchQuery === '' ) {
       Notiflix.Notify.failure(
         'Sorry, there are no images matching your search query. Please try again.'
       );
