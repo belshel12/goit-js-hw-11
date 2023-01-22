@@ -42,7 +42,7 @@ async function fetchGallery(searchValue) {
   console.log(response);
 
   try {
-    if (response.data.totalHits === 0 || searchQuery === '' ) {
+    if (response.data.totalHits === 0 || searchQuery === '') {
       Notiflix.Notify.failure(
         'Sorry, there are no images matching your search query. Please try again.'
       );
@@ -81,8 +81,10 @@ function onInfinityLoad(entries, observer) {
 
       if (page === 13) {
         observer.unobserve(refs.guard);
+        Notiflix.Notify.failure(
+          "We're sorry, but you've reached the end of search results."
+        );
       }
     }
   });
-  console.log(page);
 }
